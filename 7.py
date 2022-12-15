@@ -7,9 +7,6 @@ class TreeNode:
         self.size = size
         self.children = set()
 
-
-
-    # A sample method
     def get_child_with_name(self, name):
         for child in self.children:
             if child.name == name:
@@ -95,7 +92,6 @@ with open('7.input') as f:
     print('root size' + str(root_dir.get_total_size()))
     dirs = get_dirs_size_less(root_dir, 100000000)
 
-
     dirs.sort(key=getSize)
 
     print('free space: ' + str(70000000 - root_dir.get_total_size()))
@@ -103,7 +99,3 @@ with open('7.input') as f:
     needed_space = 30000000 - (70000000 - root_dir.get_total_size())
 
     print('needed space:' + str(needed_space))
-    for dir in dirs:
-        if dir.get_total_size() >= needed_space:
-            print(dir.get_total_size())
-            break
